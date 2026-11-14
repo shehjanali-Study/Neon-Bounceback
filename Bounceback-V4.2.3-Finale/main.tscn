@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3x7r0q1y2q"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_a2b3c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arena"]
+bg_color = Color(0.0431373, 0.0901961, 0.188235, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.470588, 0.92549, 1, 0.75)
+shadow_color = Color(0.180392, 0.94902, 1, 0.55)
+shadow_size = 22
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_a2b3c")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -1
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.0196078, 0.0313726, 0.0901961, 1)
+
+[node name="Arena" type="Panel" parent="."]
+z_index = -1
+offset_left = 60.0
+offset_top = 74.0
+offset_right = 1092.0
+offset_bottom = 584.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_arena")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 32.0
+offset_right = 260.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.180392, 0.94902, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "NEON BOUNCEBACK"
+
+[node name="Wave" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 32.0
+offset_right = 360.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(1, 0.54902, 0.796078, 1)
+theme_override_font_sizes/font_size = 19
+text = "WAVE: 1"
+
+[node name="Score" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 32.0
+offset_right = 876.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.901961, 0.945098, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "SCORE  000000"
+horizontal_alignment = 1
+
+[node name="Shots" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = 892.0
+offset_top = 32.0
+offset_right = 1092.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(1, 0.54902, 0.796078, 1)
+theme_override_font_sizes/font_size = 18
+text = "SHOTS: 1"
+horizontal_alignment = 2
+
+[node name="Hint" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 612.0
+offset_right = 876.0
+offset_bottom = 642.0
+theme_override_colors/font_color = Color(1, 0.54902, 0.796078, 1)
+theme_override_font_sizes/font_size = 13
+text = "1 SHOT ONLY • DRAG TO AIM"
+horizontal_alignment = 1
